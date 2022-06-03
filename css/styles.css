@@ -25,7 +25,7 @@ h2 {
 }
 
 /* Suggestion section */
-#suggestion, #suggestionForUnderFive, #rubyInfo {
+#suggestion, #suggestionForUnderFive, #rubyInfo, #cSharpInfo, #javaScriptInfo, #rustInfo, #phythonInfo, #swiftInfo {
   display: none;
   width: 100%;
   height: auto;
