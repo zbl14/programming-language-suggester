@@ -4,50 +4,46 @@ $(document).ready(function() {
     const nameInput = $("input#name").val();
     const ageInput = parseInt($("input#age").val());
     const genderInput =$("input#genderInput").val();
-    const surveyOne = $("input:radio[name=survey]:checked").val();
-    const surveyTwo = $("input:radio[name=survey]:checked").val();
-    const surveyThree = $("input:radio[name=survey]:checked").val();
-    const surveyFour = $("input:radio[name=survey]:checked").val();
-    const surveyFive = $("input:radio[name=survey]:checked").val();
-    const totalScore = surveyOne + surveyTwo + surveyThree + surveyFour +surveyFive
+    const surveyOne = parseInt($("input:radio[name=surveyOne]:checked").val());
+    const surveyTwo = parseInt($("input:radio[name=surveyTwo]:checked").val());
+    const surveyThree = parseInt($("input:radio[name=surveyThree]:checked").val());
+    const surveyFour = parseInt($("input:radio[name=surveyFour]:checked").val());
+    const surveyFive = parseInt($("input:radio[name=surveyFive]:checked").val());
+    const totalScore = surveyOne + surveyTwo + surveyThree + surveyFour + surveyFive;
 
-    if (genderInput === 'male' || genderInput === 'female' && ageInput < 20 && ageInput >= 5) {
-      if (totalScore < 10) {
-        $("#suggestion").show()
-        $("#resultName").text(nameInput);
-        $("suggestedLang").text("Ruby")
-        $(".surveyAnswer").text(totalScore);
-      } else if (totalScore >= 10 && totalScore < 15) {
-        $("#suggestion").show()
-        $("#resultName").text(nameInput);
-        $("suggestedLang").text("C#")
-        $("#surveyAnswer").text(totalScore);
-      } else if (totalScore >= 15) {
-        $("#suggestion").show()
-        $("#resultName").text(nameInput);
-        $("suggestedLang").text("Python")
-        $("#surveyAnswer").text(totalScore);
+    if (ageInput >= 5) {
+      if (ageInput < 20 && totalScore < 10) {
+        $("#suggestion").show();
+        $(".resultName").text(nameInput);
+        $("#suggestedLang").text("Ruby");
+      } else if (ageInput < 20 && totalScore >= 10 && totalScore < 15) {
+        $("#suggestion").show();
+        $(".resultName").text(nameInput);
+        $("#suggestedLang").text("C#");
+      } else if (ageInput < 20 && totalScore >= 15) {
+        $("#suggestion").show();
+        $(".resultName").text(nameInput);
+        $("#suggestedLang").text("JavaScript");
+      } else if (ageInput >= 20 && totalScore < 10) {
+        $("#suggestion").show();
+        $(".resultName").text(nameInput);
+        $("#suggestedLang").text("Ruby");
+      } else if (ageInput >= 20 && totalScore >= 10 && totalScore < 15) {
+        $("#suggestion").show();
+        $(".resultName").text(nameInput);
+        $("#suggestedLang").text("Rust");
+      } else if (ageInput >= 20 && totalScore >= 15 && genderInput === "male") {
+        $("#suggestion").show();
+        $(".resultName").text(nameInput);
+        $("#suggestedLang").text("Python");
+      } else if (ageInput >= 20 && totalScore >= 15 && genderInput === "female") {
+        $("#suggestion").show();
+        $(".resultName").text(nameInput);
+        $("#suggestedLang").text("Swift");
       }
-    } else if (genderInput === 'male' || genderInput === 'female' && ageInput >= 20) {
-      if (totalScore < 10) {
-        $("#suggestion").show()
-        $("#resultName").text(nameInput);
-        $("suggestedLang").text("Ruby")
-        $(".surveyAnswer").text(totalScore);
-      } else if (totalScore >= 10 && totalScore < 15) {
-        $("#suggestion").show()
-        $("#resultName").text(nameInput);
-        $("suggestedLang").text("C#")
-        $("#surveyAnswer").text(totalScore);
-      } else if (totalScore >= 15) {
-        $("#suggestion").show()
-        $("#resultName").text(nameInput);
-        $("suggestedLang").text("Python")
-        $("#surveyAnswer").text(totalScore);
-      }
-    }
-
-    
-   
+    } else {
+      $("#suggestionForUnderFive").show();
+      $(".resultName").text(nameInput);
+    }   
   });
 });
