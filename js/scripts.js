@@ -3,7 +3,7 @@ $(document).ready(function() {
     $("#suggestionForUnderFive").hide();
     $("#suggestion").hide();
   });
-  
+
   $("#formOne").submit(function() {
     event.preventDefault();
     const nameInput = $("input#name").val();
@@ -16,7 +16,7 @@ $(document).ready(function() {
     const surveyFive = parseInt($("input:radio[name=surveyFive]:checked").val());
     const totalScore = surveyOne + surveyTwo + surveyThree + surveyFour + surveyFive;
 
-    if (ageInput >= 5) {
+    if (ageInput > 5) {
       $("#suggestionForUnderFive").hide();
       if (ageInput < 20 && totalScore < 10) {
         $("#suggestion").show();
@@ -47,7 +47,7 @@ $(document).ready(function() {
         $(".resultName").text(nameInput);
         $("#suggestedLang").text("Swift");
       }
-    } else {
+    } else if (ageInput > 0 && ageInput <= 5){
       $("#suggestion").hide();
       $("#suggestionForUnderFive").show();
       $(".resultName").text(nameInput);
