@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  $("#clearResult").click(function() {
+    $("#suggestionForUnderFive").hide();
+    $("#suggestion").hide();
+  });
+  
   $("#formOne").submit(function() {
     event.preventDefault();
     const nameInput = $("input#name").val();
