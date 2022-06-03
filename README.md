@@ -18,6 +18,7 @@
     ```
 2. Open index.html file
 3. Fill the survey form and click "Submit" button
+4. Explore more info about the suggested language with attached link
 
 ## Known Bugs
 
