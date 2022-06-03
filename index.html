@@ -7,3 +7,46 @@
   <script src="js/scripts.js"></script>
   <title>Programming Language Suggester</title>
 </head>
+<body class="container">
+  <div class="jumbotron">
+    <h1><strong>Let's see what programming language may be a great fit for you.</strong></h1>
+  </div>
+
+  <div>
+    <form id="formOne">
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input id="name" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="address">Home address</label>
+        <input id="address" class="form-control" type="text">
+      </div>
+  </div>
+
+  <div>
+    <h2></h2>
+    <div class="survey">
+      <label>
+        <input type="radio" name="survey" value="A" checked>
+        A. Math
+      </label>
+    </div>
+    <div class="survey">
+      <label>
+        <input type="radio" name="survey" value="B">
+        B. Physics
+      </label>
+    </div>
+    <div class="survey">
+      <label>
+        <input type="radio" name="survey" value="C">
+        C. Chemistry
+      </label>
+    </div>
+  </div>
+
+  <button type="submit" class="btn">Submit form!</button>
+  <span class="surveyAnswer"></span>
+</body>
+</html>
