@@ -3,15 +3,13 @@ $(document).ready(function() {
     event.preventDefault();
     const nameInput = $("input#name").val();
     const ageInput = parseInt($("input#age").val());
-    const genderInput = $("input#gender").val();
+    const genderInput = $("select#gender").val();
     const surveyOne = parseInt($("input:radio[name=surveyOne]:checked").val());
     const surveyTwo = parseInt($("input:radio[name=surveyTwo]:checked").val());
     const surveyThree = parseInt($("input:radio[name=surveyThree]:checked").val());
     const surveyFour = parseInt($("input:radio[name=surveyFour]:checked").val());
     const surveyFive = parseInt($("input:radio[name=surveyFive]:checked").val());
     const totalScore = surveyOne + surveyTwo + surveyThree + surveyFour + surveyFive;
-    console.log(nameInput);
-    console.log(genderInput);
 
     if (ageInput >= 5) {
       if (ageInput < 20 && totalScore < 10) {
