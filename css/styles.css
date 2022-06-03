@@ -16,4 +16,23 @@ h2 {
   border: thin solid black;
   background-color: blue;
   color: white;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.surveyOne label,
+.surveyTwo label,
+.surveyThree label,
+.surveyFour label,
+.surveyFive label {
+  display: inline-block;
+  background-color: #ddd;
+  padding: 4px 11px;
+  font-family: Arial;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+:checked + label {
+  font-weight: bold;
 }
