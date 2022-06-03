@@ -1,13 +1,3 @@
-#suggestion, #suggestionForUnderFive {
-  display: none;
-  width: 100%;
-  height: auto;
-  margin: 10px;
-  border: 2px solid black;
-  padding: 5px;
-  background-color:lemonchiffon;
-}
-
 h2 {
  font-size: 24px;
 }
@@ -20,6 +10,7 @@ h2 {
   font-weight: bold;
 }
 
+/* Radio Selector */
 .surveyOne label,
 .surveyTwo label,
 .surveyThree label,
@@ -33,6 +24,26 @@ h2 {
   cursor: pointer;
 }
 
-:checked + label {
-  font-weight: bold;
+/* Suggestion section */
+#suggestion, #suggestionForUnderFive, #rubyInfo {
+  display: none;
+  width: 100%;
+  height: auto;
+  margin: 10px;
+  border: 2px solid black;
+  padding: 5px;
+  background-color:lemonchiffon;
+}
+
+.clickable {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+.clickable:hover {
+  text-decoration: underline;
+}
+
+#rubyInfo {
+  display: none;
 }

@@ -2,6 +2,7 @@ $(document).ready(function() {
   $("#clearResult").click(function() {
     $("#suggestionForUnderFive").hide();
     $("#suggestion").hide();
+    $("#rubyInfo").hide();
   });
 
   $("#formOne").submit(function() {
@@ -20,37 +21,40 @@ $(document).ready(function() {
       $("#suggestionForUnderFive").hide();
       if (ageInput < 20 && totalScore < 10) {
         $("#suggestion").show();
-        $(".resultName").text(nameInput);
+        $(".nameInput").text(nameInput);
         $("#suggestedLang").text("Ruby");
+        $(".clickable").click(function() {
+          $("#rubyInfo").show();
+        });
       } else if (ageInput < 20 && totalScore >= 10 && totalScore < 15) {
         $("#suggestion").show();
-        $(".resultName").text(nameInput);
+        $(".nameInput").text(nameInput);
         $("#suggestedLang").text("C#");
       } else if (ageInput < 20 && totalScore >= 15) {
         $("#suggestion").show();
-        $(".resultName").text(nameInput);
+        $(".nameInput").text(nameInput);
         $("#suggestedLang").text("JavaScript");
       } else if (ageInput >= 20 && totalScore < 10) {
         $("#suggestion").show();
-        $(".resultName").text(nameInput);
+        $(".nameInput").text(nameInput);
         $("#suggestedLang").text("Ruby");
       } else if (ageInput >= 20 && totalScore >= 10 && totalScore < 15) {
         $("#suggestion").show();
-        $(".resultName").text(nameInput);
+        $(".nameInput").text(nameInput);
         $("#suggestedLang").text("Rust");
       } else if (ageInput >= 20 && totalScore >= 15 && genderInput === "male") {
         $("#suggestion").show();
-        $(".resultName").text(nameInput);
+        $(".nameInput").text(nameInput);
         $("#suggestedLang").text("Python");
       } else if (ageInput >= 20 && totalScore >= 15 && genderInput === "female") {
         $("#suggestion").show();
-        $(".resultName").text(nameInput);
+        $(".nameInput").text(nameInput);
         $("#suggestedLang").text("Swift");
       }
     } else if (ageInput > 0 && ageInput <= 5){
       $("#suggestion").hide();
       $("#suggestionForUnderFive").show();
-      $(".resultName").text(nameInput);
+      $(".nameInput").text(nameInput);
     }   
   });
 });
