@@ -12,6 +12,7 @@ $(document).ready(function() {
     const totalScore = surveyOne + surveyTwo + surveyThree + surveyFour + surveyFive;
 
     if (ageInput >= 5) {
+      $("#suggestionForUnderFive").hide();
       if (ageInput < 20 && totalScore < 10) {
         $("#suggestion").show();
         $(".resultName").text(nameInput);
@@ -42,6 +43,7 @@ $(document).ready(function() {
         $("#suggestedLang").text("Swift");
       }
     } else {
+      $("#suggestion").hide();
       $("#suggestionForUnderFive").show();
       $(".resultName").text(nameInput);
     }   
